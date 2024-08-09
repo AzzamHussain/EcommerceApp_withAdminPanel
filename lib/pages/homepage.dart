@@ -32,7 +32,20 @@ class _HomepageState extends State<Homepage> {
                   ),
                 )
               ],
-            )
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Delicious Food",
+                  style: AppWidget.boldTextFieldStyle(),
+                  textAlign: TextAlign.right,
+                ),
+              ],
+            ),
           ],
         ),
       ),
