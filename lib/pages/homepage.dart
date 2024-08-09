@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -12,15 +13,25 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(top: 50, left: 20, right: 10),
+        margin: EdgeInsets.only(top: 50.0, left: 20.0, right: 10.0),
         child: Column(
           children: [
-            Text(
-              "Hello Azzam",
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Poppins'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hello Azzam", style: AppWidget.boldTextFieldStyle()),
+                Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.white,
+                  ),
+                )
+              ],
             )
           ],
         ),
