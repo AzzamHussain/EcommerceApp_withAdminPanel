@@ -41,7 +41,7 @@ class _HomepageState extends State<Homepage> {
               children: [
                 Text(
                   "Delicious Food",
-                  style: AppWidget.boldTextFieldStyle(),
+                  style: AppWidget.HeadLineTextFieldStyle(),
                   textAlign: TextAlign.right,
                 ),
               ],
