@@ -17,7 +17,10 @@ class _HomepageState extends State<Homepage> {
           children: [
             Text(
               "Hello Azzam",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Poppins'),
             )
           ],
         ),
