@@ -64,6 +64,13 @@ flutter:
     - assets/pizza.png
     - assets/ice-cream.png
     - assets/salad.png
+    - assets/food.png
+    - assets/salad2.png
+    - assets/pasta.png
+    - assets/beefbiryani.png
+
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
