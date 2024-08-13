@@ -9,6 +9,7 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
+  int a = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,31 +39,65 @@ class _DetailsState extends State<Details> {
             SizedBox(
               height: 15.0,
             ),
-          Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-    Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Russian",
-          style: AppWidget.boldTextFieldStyle(),
-        ),
-        Text(
-          "Salad",
-          style: AppWidget.LightTextFieldStyle(),
-        ),
-      ],
-    ),
-    Container(
-      decoration: BoxDecoration(color: Colors.black),
-      child: Icon(
-        Icons.remove,
-        color: Colors.white,
-      ),
-    ),
-  ],
-)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Russian",
+                      style: AppWidget.boldTextFieldStyle(),
+                    ),
+                    Text(
+                      "Salad",
+                      style: AppWidget.LightTextFieldStyle(),
+                    ),
+                  ],
+                ),
+                Spacer(),
+                GestureDetector(
+                  onTap: () {
+                    --a;
+                    setState(() {});
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(8.0)),
+                    child: Icon(
+                      Icons.remove,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                Text(
+                  a.toString(),
+                  style: AppWidget.boldTextFieldStyle(),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    ++a;
+                    setState(() {});
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(8.0)),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
