@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/pages/details.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -107,13 +108,25 @@ class _HomepageState extends State<Homepage> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     buildFoodCard('assets/salad2.png', 'Burger', '\$12', () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Details()),
+                      );
                       print("Delicious Burger tapped!");
                     }),
                     buildFoodCard('assets/food.png', 'Pizza', '\$15', () {
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Details()),
+                      );
                       print("Tasty Pizza tapped!");
                     }),
                     buildFoodCard('assets/beefbiryani.png', 'Biryani', '\$8',
                         () {
+                            Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Details()),
+                      );
                       print("Biryani tapped!");
                     }),
                   ],
