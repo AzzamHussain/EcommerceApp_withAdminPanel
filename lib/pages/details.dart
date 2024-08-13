@@ -152,22 +152,25 @@ class _DetailsState extends State<Details> {
                     ],
                   ),
                   SizedBox(
-                    width: 80.0,
+                    width: 40.0,
                   ),
                   Container(
                     decoration: BoxDecoration(color: Colors.black),
                     child: Row(
                       children: [
                         Text(
-                          "Add to cart",
+                          " Add to cart",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
                               fontFamily: 'poppins'),
                         ),
+                        SizedBox(
+                          width: 30.0,
+                        ),
                         Container(
                           padding: EdgeInsets.all(3.0),
-                          decoration: BoxDecoration(color: Colors.grey),
+                          decoration: BoxDecoration(color: Colors.black),
                           child: Icon(
                             Icons.shopping_cart_outlined,
                             color: Colors.white,
