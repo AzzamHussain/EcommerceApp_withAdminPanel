@@ -155,27 +155,37 @@ class _DetailsState extends State<Details> {
                     width: 40.0,
                   ),
                   Container(
-                    decoration: BoxDecoration(color: Colors.black),
+                    width: MediaQuery.of(context).size.width / 2.3,
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10.0)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          " Add to cart",
-                          style: TextStyle(
+                        Expanded(
+                          child: Text(
+                            "Add to cart",
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
-                              fontFamily: 'poppins'),
+                              fontFamily: 'poppins',
+                            ),
+                            overflow: TextOverflow
+                                .ellipsis, // To handle overflowed text
+                          ),
                         ),
                         SizedBox(
-                          width: 30.0,
+                          width: 15.0,
                         ),
                         Container(
-                          padding: EdgeInsets.all(3.0),
+                          padding: EdgeInsets.all(1.0),
                           decoration: BoxDecoration(color: Colors.black),
                           child: Icon(
                             Icons.shopping_cart_outlined,
                             color: Colors.white,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   )
