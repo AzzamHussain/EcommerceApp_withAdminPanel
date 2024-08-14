@@ -103,7 +103,7 @@ class _HomepageState extends State<Homepage> {
               SizedBox(height: 20.0),
               // Horizontal Card Section with onTap functionality
               Container(
-                height: 180,
+                height: 200, // Increased height of the container
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
@@ -115,7 +115,7 @@ class _HomepageState extends State<Homepage> {
                       print("Delicious Burger tapped!");
                     }),
                     buildFoodCard('assets/food.png', 'Pizza', '\$15', () {
-                        Navigator.push(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Details()),
                       );
@@ -123,7 +123,7 @@ class _HomepageState extends State<Homepage> {
                     }),
                     buildFoodCard('assets/beefbiryani.png', 'Biryani', '\$8',
                         () {
-                            Navigator.push(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Details()),
                       );
@@ -168,7 +168,8 @@ class _HomepageState extends State<Homepage> {
               assetPath,
               height: 50,
               width: 50,
-              fit: BoxFit.cover,
+              fit: BoxFit
+                  .contain, // Changed to ensure the image fits within the bounds
             ),
           ),
         ),
@@ -181,7 +182,7 @@ class _HomepageState extends State<Homepage> {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        width: 160,
+        width: 180, // Increased width to accommodate larger image
         child: Card(
           margin: EdgeInsets.all(10.0),
           child: Padding(
@@ -191,23 +192,23 @@ class _HomepageState extends State<Homepage> {
               children: [
                 Image.asset(
                   assetPath,
-                  height: 80,
+                  height: 100, // Increased height of the image
                   width: double.infinity,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain, // Ensuring the image fits completely
                 ),
                 SizedBox(height: 10.0),
                 Text(
                   description,
                   style: TextStyle(
                     color: Colors.grey[800],
-                    fontSize: 14.0,
+                    fontSize: 16.0, // Slightly increased font size
                   ),
                 ),
                 Text(
                   price,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 16.0,
+                    fontSize: 18.0, // Slightly increased font size
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -232,22 +233,22 @@ class _HomepageState extends State<Homepage> {
       child: ListTile(
         leading: Image.asset(
           assetPath,
-          height: 50,
-          width: 50,
-          fit: BoxFit.cover,
+          height: 60, // Increased height of the image
+          width: 60, // Increased width of the image
+          fit: BoxFit.contain, // Ensuring the image fits completely
         ),
         title: Text(
           description,
           style: TextStyle(
             color: Colors.grey[800],
-            fontSize: 14.0,
+            fontSize: 16.0, // Slightly increased font size
           ),
         ),
         subtitle: Text(
           price,
           style: TextStyle(
             color: Colors.black,
-            fontSize: 16.0,
+            fontSize: 18.0, // Slightly increased font size
             fontWeight: FontWeight.bold,
           ),
         ),
