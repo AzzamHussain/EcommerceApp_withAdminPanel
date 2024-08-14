@@ -1,4 +1,4 @@
-import 'package:ecommerce_with_adminpanel/pages/bottom_nav_bar.dart';
+import 'package:ecommerce_with_adminpanel/pages/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         
         useMaterial3: true,
       ),
-      home:BottomNavBar(),
+      home:Login(),
       debugShowCheckedModeBanner: false,
     );
   }
