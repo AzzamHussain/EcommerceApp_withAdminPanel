@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -36,14 +37,23 @@ class _LoginState extends State<Login> {
             child: Text(""),
           ),
           Container(
-            margin: EdgeInsets.only(top: 60.0, left: 80, right: 60),
+            margin: EdgeInsets.only(top: 60.0,left: 20.0,right: 20.0), //ad here left right
             child: Column(
               children: [
                 Image.asset(
                   "assets/logo.png",
                   width: MediaQuery.of(context).size.width / 2,
                   fit: BoxFit.cover,
-                )
+
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(color: Colors.white,),
+                  child: Column(children: [
+                    
+                    Text("Login",style: AppWidget.boldTextFieldStyle(),)
+                  ],),
+                ),
               ],
             ),
           )
