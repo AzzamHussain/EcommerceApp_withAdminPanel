@@ -54,14 +54,41 @@ class _LoginState extends State<Login> {
                       elevation: 5.0,
                       borderRadius: BorderRadius.circular(10.0),
                       child: Container(
+                        padding: EdgeInsets.only(right: 20.0,left: 20.0),
                         width: MediaQuery.of(context).size.width,
                         height:  MediaQuery.of(context).size.height/2,
                       
                         decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(10.0)),
                         child: Column(children: [
+                          SizedBox(height: 30.0,),
                           
-                          Text("Login",style: AppWidget.boldTextFieldStyle(),)
-                        ],),
+                          Text("Login",style: AppWidget.HeadLineTextFieldStyle(),),
+                          TextField(
+                            decoration: InputDecoration(hintText: "Email",hintStyle: AppWidget.boldTextFieldStyle(),
+                            prefixIcon: Icon(Icons.email_outlined) ),),
+                            SizedBox(height: 30.0),
+                            TextField(
+                            decoration: InputDecoration(hintText: "Password",hintStyle: AppWidget.boldTextFieldStyle(),
+                            prefixIcon: Icon(Icons.password_outlined) ),),
+                            SizedBox(height:30.0),
+                            Container(
+                             
+                              alignment:Alignment.topRight, 
+                              child :Text("Forgot password?",style: AppWidget.boldTextFieldStyle(),)),
+                              SizedBox(height:  80.0),
+                              Material(
+                                elevation: 5.0,
+                              borderRadius: BorderRadius.circular(20),
+                                child: Container(
+                                   padding: EdgeInsets.symmetric(vertical: 8.0),
+                                width: 200,
+                                  decoration: BoxDecoration(color: Color(0xffff5720),),
+
+                                  child: Center(child: Text("LOGIN",style: TextStyle(color: Colors.white,fontSize: 18.0,fontFamily: 'Poppins1',fontWeight: FontWeight.bold),)),
+                                ),
+                              )     
+                            ],
+                            ),
                       ),
                     ),
               
