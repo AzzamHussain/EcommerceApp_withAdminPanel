@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
                                 child: Container(
                                    padding: EdgeInsets.symmetric(vertical: 8.0),
                                 width: 200,
-                                  decoration: BoxDecoration(color: Color(0xffff5720),),
+                                  decoration: BoxDecoration(color: Color(0xffff5720),borderRadius: BorderRadius.circular(20),),
 
                                   child: Center(child: Text("LOGIN",style: TextStyle(color: Colors.white,fontSize: 18.0,fontFamily: 'Poppins1',fontWeight: FontWeight.bold),)),
                                 ),
