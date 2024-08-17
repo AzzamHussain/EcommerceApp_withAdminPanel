@@ -75,14 +75,14 @@ class _LoginState extends State<Login> {
                              
                               alignment:Alignment.topRight, 
                               child :Text("Forgot password?",style: AppWidget.boldTextFieldStyle(),)),
-                              SizedBox(height:  80.0),
+                              SizedBox(height:  60.0),
                               Material(
                                 elevation: 5.0,
                               borderRadius: BorderRadius.circular(20),
                                 child: Container(
                                    padding: EdgeInsets.symmetric(vertical: 8.0),
                                 width: 200,
-                                  decoration: BoxDecoration(color: Color(0xffff5720),borderRadius: BorderRadius.circular(20),),
+                                  decoration: BoxDecoration(color: Color(0xffff5720), borderRadius: BorderRadius.circular(20),),
 
                                   child: Center(child: Text("LOGIN",style: TextStyle(color: Colors.white,fontSize: 18.0,fontFamily: 'Poppins1',fontWeight: FontWeight.bold),)),
                                 ),
@@ -90,7 +90,10 @@ class _LoginState extends State<Login> {
                             ],
                             ),
                       ),
+                      
                     ),
+                    SizedBox(height: 50.0,),
+                    Text("Dont't have an account? SignUp",style:AppWidget.boldTextFieldStyle(),)
               
                 
               ],
