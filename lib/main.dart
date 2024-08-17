@@ -1,4 +1,5 @@
-import 'package:ecommerce_with_adminpanel/pages/login.dart';
+//import 'package:ecommerce_with_adminpanel/pages/login.dart';
+import 'package:ecommerce_with_adminpanel/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         
         useMaterial3: true,
       ),
-      home:Login(),
+      home:SignUp(),
       debugShowCheckedModeBanner: false,
     );
   }
