@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/pages/signup.dart';
 import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 
@@ -56,13 +57,15 @@ class _LoginState extends State<Login> {
                       child: Container(
                         padding: EdgeInsets.only(right: 20.0,left: 20.0),
                         width: MediaQuery.of(context).size.width,
-                        height:  MediaQuery.of(context).size.height/2,
+                        height:  MediaQuery.of(context).size.height/1.5,
                       
                         decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(10.0)),
                         child: Column(children: [
                           SizedBox(height: 30.0,),
                           
                           Text("Login",style: AppWidget.HeadLineTextFieldStyle(),),
+                          SizedBox(height: 30.0,),
+
                           TextField(
                             decoration: InputDecoration(hintText: "Email",hintStyle: AppWidget.boldTextFieldStyle(),
                             prefixIcon: Icon(Icons.email_outlined) ),),
@@ -93,8 +96,11 @@ class _LoginState extends State<Login> {
                       
                     ),
                    SizedBox( height: 50.0,),
-                    Text("Don't have an account? SignUp",style:AppWidget.boldTextFieldStyle(),)
-              
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                      },
+                      child: Text("Don't have an account? SignUp",style:AppWidget.boldTextFieldStyle(),))              
                 
               ],
             ),

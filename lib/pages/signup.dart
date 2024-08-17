@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/pages/login.dart';
 import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 
@@ -96,7 +97,12 @@ class _SignUpState extends State<SignUp> {
                     ),
                     
                    SizedBox( height: 40.0,),
-                    Text("Already have an account? Login",style:AppWidget.boldTextFieldStyle(),)
+                  
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                      },
+                      child: Text("Already have an account? Login",style:AppWidget.boldTextFieldStyle(),))
               
                   
               
