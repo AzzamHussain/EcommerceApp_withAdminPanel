@@ -1,4 +1,5 @@
 //import 'package:ecommerce_with_adminpanel/pages/login.dart';
+import 'package:ecommerce_with_adminpanel/pages/onboard.dart';
 import 'package:ecommerce_with_adminpanel/pages/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         
         useMaterial3: true,
       ),
-      home:SignUp(),
+      home:Onboard(),
       debugShowCheckedModeBanner: false,
     );
   }
