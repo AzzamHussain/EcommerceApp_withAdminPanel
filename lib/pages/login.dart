@@ -20,10 +20,12 @@ class _LoginState extends State<Login> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2.5,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [Color(0xFFff5c30), Color(0xFFe74b1a)])),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFFff5c30), Color(0xFFe74b1a)],
+                ),
+              ),
             ),
             Container(
               margin: EdgeInsets.only(
@@ -32,10 +34,12 @@ class _LoginState extends State<Login> {
               height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40.0),
-                      topRight: Radius.circular(40.0))),
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40.0),
+                  topRight: Radius.circular(40.0),
+                ),
+              ),
               child: Text(""),
             ),
             Container(
@@ -54,14 +58,15 @@ class _LoginState extends State<Login> {
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(10.0),
                     child: Container(
-                      padding: EdgeInsets.only(right: 20.0, left: 20.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0), // Added vertical padding
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0)),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       child: Column(
                         children: [
-                          SizedBox(height: 30.0),
+                          SizedBox(height: 10.0), // Reduced height for consistency
                           Text(
                             "Login",
                             style: AppWidget.HeadLineTextFieldStyle(),
@@ -90,12 +95,12 @@ class _LoginState extends State<Login> {
                               style: AppWidget.boldTextFieldStyle(),
                             ),
                           ),
-                          SizedBox(height: 60.0),
+                          SizedBox(height: 50.0), // Reduced space above the button
                           Material(
                             elevation: 5.0,
                             borderRadius: BorderRadius.circular(20),
                             child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 8.0),
+                              padding: EdgeInsets.symmetric(vertical: 12.0), // Increased vertical padding for button
                               width: 200,
                               decoration: BoxDecoration(
                                 color: Color(0xffff5720),
@@ -121,14 +126,16 @@ class _LoginState extends State<Login> {
                   SizedBox(height: 50.0),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUp()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUp()),
+                      );
                     },
                     child: Text(
                       "Don't have an account? SignUp",
                       style: AppWidget.boldTextFieldStyle(),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
