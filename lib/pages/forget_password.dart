@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPassword extends StatefulWidget {
@@ -87,11 +88,40 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                        ))
+                        )),
+                    SizedBox(
+                      height: 50.0,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Dont Have an account?",
+                          style: TextStyle(fontSize: 18.0, color: Colors.white),
+                        ),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUp()));
+                          },
+                          child: Text(
+                            "Create",
+                            style: TextStyle(
+                                color: Colors.yellow,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               )),
-            )
+            ),
           ],
         ),
       ),
