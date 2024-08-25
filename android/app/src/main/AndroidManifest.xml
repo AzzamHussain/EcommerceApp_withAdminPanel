@@ -2,7 +2,9 @@
     <application
         android:label="ecommerce_with_adminpanel"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"> //added with stackoverflow
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

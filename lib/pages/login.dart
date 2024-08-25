@@ -1,4 +1,6 @@
+import 'package:ecommerce_with_adminpanel/pages/forget_password.dart';
 import 'package:ecommerce_with_adminpanel/pages/signup.dart';
+import 'package:ecommerce_with_adminpanel/pages/homepage.dart'; // Import your next screen here
 import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -15,22 +17,30 @@ class _LoginState extends State<Login> {
 
   final _formkey = GlobalKey<FormState>();
 
-  TextEditingController useremailcontroller = new TextEditingController();
-  TextEditingController userpasswordcontroller = new TextEditingController();
+  TextEditingController useremailcontroller = TextEditingController();
+  TextEditingController userpasswordcontroller = TextEditingController();
 
   UserLogin() async {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+
+      // Navigate to the HomePage after successful login
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                Homepage()), // Replace with your desired screen
+      );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-Found') {
+      if (e.code == 'user-not-found') {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(
             "No user found for that Email",
             style: TextStyle(fontSize: 18.0, color: Colors.black),
           ),
         ));
-      } else if (e.code == 'Wrong-Password') {
+      } else if (e.code == 'wrong-password') {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(
             "Email or Password is incorrect",
@@ -90,8 +100,7 @@ class _LoginState extends State<Login> {
                     borderRadius: BorderRadius.circular(10.0),
                     child: Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                          vertical: 30.0), // Added vertical padding
+                          horizontal: 20.0, vertical: 30.0),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -101,8 +110,7 @@ class _LoginState extends State<Login> {
                         key: _formkey,
                         child: Column(
                           children: [
-                            SizedBox(
-                                height: 10.0), // Reduced height for consistency
+                            SizedBox(height: 10.0),
                             Text(
                               "Login",
                               style: AppWidget.HeadLineTextFieldStyle(),
@@ -112,7 +120,7 @@ class _LoginState extends State<Login> {
                               controller: useremailcontroller,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return "Please Enter Password";
+                                  return "Please Enter Email";
                                 }
                                 return null;
                               },
@@ -139,15 +147,23 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                             SizedBox(height: 30.0),
-                            Container(
-                              alignment: Alignment.topRight,
-                              child: Text(
-                                "Forgot password?",
-                                style: AppWidget.boldTextFieldStyle(),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ForgetPassword()));
+                              },
+                              child: Container(
+                                alignment: Alignment.topRight,
+                                child: Text(
+                                  "Forgot password?",
+                                  style: AppWidget.boldTextFieldStyle(),
+                                ),
                               ),
                             ),
-                            SizedBox(
-                                height: 50.0), // Reduced space above the button
+                            SizedBox(height: 50.0),
                             GestureDetector(
                               onTap: () {
                                 if (_formkey.currentState!.validate()) {
@@ -155,16 +171,14 @@ class _LoginState extends State<Login> {
                                     email = useremailcontroller.text;
                                     password = userpasswordcontroller.text;
                                   });
+                                  UserLogin();
                                 }
-                                UserLogin();
                               },
                               child: Material(
                                 elevation: 5.0,
                                 borderRadius: BorderRadius.circular(20),
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical:
-                                          12.0), // Increased vertical padding for button
+                                  padding: EdgeInsets.symmetric(vertical: 12.0),
                                   width: 200,
                                   decoration: BoxDecoration(
                                     color: Color(0xffff5720),
