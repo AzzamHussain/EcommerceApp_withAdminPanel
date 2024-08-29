@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/pages/bottom_nav_bar.dart';
 import 'package:ecommerce_with_adminpanel/pages/forget_password.dart';
 import 'package:ecommerce_with_adminpanel/pages/signup.dart';
 import 'package:ecommerce_with_adminpanel/pages/homepage.dart'; // Import your next screen here
@@ -30,7 +31,7 @@ class _LoginState extends State<Login> {
         context,
         MaterialPageRoute(
             builder: (context) =>
-                Homepage()), // Replace with your desired screen
+                BottomNavBar()), // Replace with your desired screen
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
