@@ -79,80 +79,103 @@ class _WalletState extends State<Wallet> {
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(children: [
-                Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Color(0XFFE9E2E2),
-                        ),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Text(
-                      "Rs:" + "100",
-                      style: AppWidget.boldTextFieldStyle(),
-                    )),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color(0XFFE9E2E2),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0XFFE9E2E2),
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Text(
+                          "Rs:" + "100",
+                          style: AppWidget.boldTextFieldStyle(),
+                        )),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0XFFE9E2E2),
+                          ),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        "Rs:" + "1000",
+                        style: AppWidget.boldTextFieldStyle(),
                       ),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Text(
-                    "Rs:" + "1000",
-                    style: AppWidget.boldTextFieldStyle(),
-                  ),
-                ),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color(0XFFE9E2E2),
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0XFFE9E2E2),
+                          ),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        "Rs:" + "1200",
+                        style: AppWidget.boldTextFieldStyle(),
                       ),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Text(
-                    "Rs:" + "1200",
-                    style: AppWidget.boldTextFieldStyle(),
-                  ),
-                ),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color(0XFFE9E2E2),
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0XFFE9E2E2),
+                          ),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        "Rs:" + "10000",
+                        style: AppWidget.boldTextFieldStyle(),
                       ),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Text(
-                    "Rs:" + "10000",
-                    style: AppWidget.boldTextFieldStyle(),
-                  ),
-                ),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color(0XFFE9E2E2),
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0XFFE9E2E2),
+                          ),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        "Rs:" + "1500",
+                        style: AppWidget.boldTextFieldStyle(),
                       ),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Text(
-                    "Rs:" + "1500",
-                    style: AppWidget.boldTextFieldStyle(),
-                  ),
-                ),
-              ]),
+                    ),
+                  ]),
             ),
+            SizedBox(
+              height: 50.0,
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(vertical: 12),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  color: Color(0xFF008080),
+                  borderRadius: BorderRadius.circular(8.0)),
+              child: Center(
+                child: Text(
+                  "Add Money",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            )
           ],
         ),
       ),
