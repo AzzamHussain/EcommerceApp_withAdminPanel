@@ -14,6 +14,8 @@ class Wallet extends StatefulWidget {
 }
 
 class _WalletState extends State<Wallet> {
+  TextEditingController amountcontroller = new TextEditingController();
+
   Map<String, dynamic>? paymentIntent;
   @override
   Widget build(BuildContext context) {
@@ -88,7 +90,30 @@ class _WalletState extends State<Wallet> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
+                    GestureDetector(
+                      onTap: () {
+                        makePayment('100');
+                      },
+                      child: Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Color(0XFFE9E2E2),
+                              ),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text(
+                            "Rs:" + "100",
+                            style: AppWidget.boldTextFieldStyle(),
+                          )),
+                    ),
+                    // SizedBox(
+                    //   width: 5.0,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        makePayment("1000");
+                      },
+                      child: Container(
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             border: Border.all(
@@ -96,67 +121,69 @@ class _WalletState extends State<Wallet> {
                             ),
                             borderRadius: BorderRadius.circular(5)),
                         child: Text(
-                          "Rs:" + "100",
+                          "Rs:" + "1000",
                           style: AppWidget.boldTextFieldStyle(),
-                        )),
-                    SizedBox(
-                      width: 5.0,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0XFFE9E2E2),
-                          ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text(
-                        "Rs:" + "1000",
-                        style: AppWidget.boldTextFieldStyle(),
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      width: 5.0,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0XFFE9E2E2),
-                          ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text(
-                        "Rs:" + "1200",
-                        style: AppWidget.boldTextFieldStyle(),
+                    // SizedBox(
+                    //   width: 5.0,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        makePayment("1200");
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0XFFE9E2E2),
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Text(
+                          "Rs:" + "1200",
+                          style: AppWidget.boldTextFieldStyle(),
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      width: 5.0,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0XFFE9E2E2),
-                          ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text(
-                        "Rs:" + "10000",
-                        style: AppWidget.boldTextFieldStyle(),
+                    // SizedBox(
+                    //   width: 5.0,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        makePayment("10000");
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0XFFE9E2E2),
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Text(
+                          "Rs:" + "10000",
+                          style: AppWidget.boldTextFieldStyle(),
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      width: 5.0,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0XFFE9E2E2),
-                          ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text(
-                        "Rs:" + "1500",
-                        style: AppWidget.boldTextFieldStyle(),
+                    // SizedBox(
+                    //   width: 5.0,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        makePayment("1500");
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0XFFE9E2E2),
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Text(
+                          "Rs:" + "1500",
+                          style: AppWidget.boldTextFieldStyle(),
+                        ),
                       ),
                     ),
                   ]),
@@ -164,21 +191,26 @@ class _WalletState extends State<Wallet> {
             SizedBox(
               height: 50.0,
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
-              padding: EdgeInsets.symmetric(vertical: 12),
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  color: Color(0xFF008080),
-                  borderRadius: BorderRadius.circular(8.0)),
-              child: Center(
-                child: Text(
-                  "Add Money",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.bold),
+            GestureDetector(
+              onTap: () {
+                openEdit();
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(vertical: 12),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: Color(0xFF008080),
+                    borderRadius: BorderRadius.circular(8.0)),
+                child: Center(
+                  child: Text(
+                    "Add Money",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             )
@@ -190,7 +222,7 @@ class _WalletState extends State<Wallet> {
 
   Future<void> makePayment(String amount) async {
     try {
-      paymentIntent = await createPaymentIntent(amount, 'Rs');
+      paymentIntent = await createPaymentIntent(amount, 'USD');
       await Stripe.instance
           .initPaymentSheet(
               paymentSheetParameters: SetupPaymentSheetParameters(
@@ -241,7 +273,7 @@ class _WalletState extends State<Wallet> {
       Map<String, dynamic> body = {
         'amount': calculateAmount(amount),
         'currency': currency,
-        'Payment_method_types[]': 'card',
+        'payment_method_types[]': 'card',
       };
       var response = await http.post(
         Uri.parse('https://api.stripe.com/v1/payment_intents'),
@@ -262,4 +294,81 @@ class _WalletState extends State<Wallet> {
     final calculatedAmount = (int.parse(amount) * 100);
     return calculatedAmount.toString();
   }
+
+  Future openEdit() => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            content: SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(Icons.cancel)),
+                        SizedBox(
+                          width: 60.0,
+                        ),
+                        Center(
+                          child: Text(
+                            "Add Money",
+                            style: TextStyle(
+                              color: Color(0xFF008080),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Text("Amount"),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black38, width: 2.0),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: TextField(
+                        controller: amountcontroller,
+                        decoration: InputDecoration(
+                            border: InputBorder.none, hintText: 'Enter Amount'),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          makePayment(amountcontroller.text);
+                        },
+                        child: Container(
+                          width: 100,
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF008080),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                              child: Text(
+                            "Pay",
+                            style: TextStyle(color: Colors.white),
+                          )),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ));
 }
