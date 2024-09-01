@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'dart:ffi';
+//import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
 
+import 'package:ecommerce_with_adminpanel/services/sharedpref.dart';
 import 'package:ecommerce_with_adminpanel/widgets/app_constant.dart';
 import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +17,23 @@ class Wallet extends StatefulWidget {
 }
 
 class _WalletState extends State<Wallet> {
+  String? wallet;
+  int? add;
+  getthesharedpref() async {
+    wallet = await SharedPreferencesHelper.userWalletKey;
+    setState(() {});
+  }
+
+  onTheLoad() async {
+    await getthesharedpref();
+    setState(() {});
+  }
+
+  void initState() {
+    onTheLoad();
+    super.initState();
+  }
+
   TextEditingController amountcontroller = new TextEditingController();
 
   Map<String, dynamic>? paymentIntent;
@@ -239,6 +259,8 @@ class _WalletState extends State<Wallet> {
   displayPaymentSheet(String amount) async {
     try {
       await Stripe.instance.presentPaymentSheet().then((Value) async {
+        add = int.parse(wallet!) + int.parse(amount);
+        await SharedPreferencesHelper().saveUserWallet(add.toString());
         showDialog(
             context: context,
             builder: (_) => AlertDialog(
@@ -252,6 +274,7 @@ class _WalletState extends State<Wallet> {
                     ],
                   ),
                 ));
+        await getthesharedpref();
         paymentIntent = null;
       }).onError((error, stackTrace) {
         print("Error is:------>$error$stackTrace");

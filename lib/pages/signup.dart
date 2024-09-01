@@ -1,8 +1,12 @@
 import 'package:ecommerce_with_adminpanel/pages/homepage.dart';
 import 'package:ecommerce_with_adminpanel/pages/login.dart';
+import 'package:ecommerce_with_adminpanel/services/database.dart';
+import 'package:ecommerce_with_adminpanel/services/sharedpref.dart';
 import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:random_string/random_string.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -32,6 +36,18 @@ class _SignUpState extends State<SignUp> {
               "Registered Successfully",
               style: TextStyle(fontSize: 20.0),
             ))));
+        String Id = randomAlphaNumeric(10);
+        Map<String, dynamic> addUserInfo = {
+          "Name": namecontroller.text,
+          "Email": mailcontroller.text,
+          "Wallet": "0",
+          "Id": Id,
+        };
+        await DatabaseMethod().addUserDetail(addUserInfo, Id);
+        await SharedPreferencesHelper().saveUserName(namecontroller.text);
+        await SharedPreferencesHelper().saveUserEmail(mailcontroller.text);
+        await SharedPreferencesHelper().saveUserWallet('0');
+        await SharedPreferencesHelper().saveUserId(Id);
 
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Homepage()));
