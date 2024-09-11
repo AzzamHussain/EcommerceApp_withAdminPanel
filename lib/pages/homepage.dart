@@ -110,24 +110,39 @@ class _HomepageState extends State<Homepage> {
                     buildFoodCard('assets/salad2.png', 'Burger', '\$12', () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Details()),
+                        MaterialPageRoute(
+                          builder: (context) => Details(
+                            itemName: 'Burger',
+                            price: '12',
+                            imagePath: 'assets/salad2.png',
+                          ),
+                        ),
                       );
-                      print("Delicious Burger tapped!");
                     }),
                     buildFoodCard('assets/food.png', 'Pizza', '\$15', () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Details()),
+                        MaterialPageRoute(
+                          builder: (context) => Details(
+                            itemName: 'Pizza',
+                            price: '15',
+                            imagePath: 'assets/food.png',
+                          ),
+                        ),
                       );
-                      print("Tasty Pizza tapped!");
                     }),
                     buildFoodCard('assets/beefbiryani.png', 'Biryani', '\$8',
                         () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Details()),
+                        MaterialPageRoute(
+                          builder: (context) => Details(
+                            itemName: 'Biryani',
+                            price: '8',
+                            imagePath: 'assets/beefbiryani.png',
+                          ),
+                        ),
                       );
-                      print("Biryani tapped!");
                     }),
                   ],
                 ),
@@ -141,31 +156,51 @@ class _HomepageState extends State<Homepage> {
                   buildFoodTile('assets/salad2.png', 'Healthy Salad', '\$10', () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Details()),
+                      MaterialPageRoute(
+                        builder: (context) => Details(
+                          itemName: 'Healthy Salad',
+                          price: '10',
+                          imagePath: 'assets/salad2.png',
+                        ),
+                      ),
                     );
-                    print("Healthy Salad tapped!");
                   }),
                   buildFoodTile('assets/food.png', 'Burger with fries', '\$9', () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Details()),
+                      MaterialPageRoute(
+                        builder: (context) => Details(
+                          itemName: 'Burger with fries',
+                          price: '9',
+                          imagePath: 'assets/food.png',
+                        ),
+                      ),
                     );
-                    print("Burger with fries tapped!");
                   }),
                   buildFoodTile('assets/pasta.png', 'Alfredo Pasta', '\$5', () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Details()),
+                      MaterialPageRoute(
+                        builder: (context) => Details(
+                          itemName: 'Alfredo Pasta',
+                          price: '5',
+                          imagePath: 'assets/pasta.png',
+                        ),
+                      ),
                     );
-                    print("Alfredo Pasta tapped!");
                   }),
                   buildFoodTile(
                       'assets/beefbiryani.png', 'Beef Biryani', '\$5', () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Details()),
+                      MaterialPageRoute(
+                        builder: (context) => Details(
+                          itemName: 'Beef Biryani',
+                          price: '5',
+                          imagePath: 'assets/beefbiryani.png',
+                        ),
+                      ),
                     );
-                    print("Beef Biryani tapped!");
                   }),
                 ],
               ),
