@@ -17,11 +17,19 @@ class _HomeAdminState extends State<HomeAdmin> {
         margin: EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
         child: Column(
           children: [
-            Center(child: Text("Home Admin", style: AppWidget.HeadLineTextFieldStyle(),),),
-            SizedBox(height: 50.0,),
+            Center(
+              child: Text(
+                "Home Admin",
+                style: AppWidget.HeadLineTextFieldStyle(),
+              ),
+            ),
+            SizedBox(
+              height: 50.0,
+            ),
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> AddFood()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddFood()));
               },
               child: Material(
                 elevation: 10.0,
@@ -30,15 +38,32 @@ class _HomeAdminState extends State<HomeAdmin> {
                   child: Container(
                     padding: EdgeInsets.all(4),
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Color.fromRGBO(4, 4, 235, 0.498),
                       borderRadius: BorderRadius.circular(10),
-                      
                     ),
-                    child: Row(children: [
-                      Padding(padding: EdgeInsets.all(6.0),
-                      child: Image.asset("assets/food.png", height: 100, width: 100, fit: BoxFit.cover,),),
-                  SizedBox(width: 30.0,) ,
-                  Text("Add Food Items", style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),) ],),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(6.0),
+                          child: Image.asset(
+                            "assets/food.png",
+                            height: 100,
+                            width: 100,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 30.0,
+                        ),
+                        Text(
+                          "Add Food Items",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

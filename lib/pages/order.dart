@@ -79,7 +79,7 @@ class _OrderState extends State<Order> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Text("\$${item["Total"]}"),
+                                Text("RS:${item["Total"]}"),
                               ],
                             ),
                           ],
@@ -101,7 +101,7 @@ class _OrderState extends State<Order> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "\$$total",
+                    "RS:$total",
                     style: const TextStyle(fontSize: 18),
                   ),
                 ],

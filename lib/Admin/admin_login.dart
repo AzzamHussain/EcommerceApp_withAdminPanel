@@ -137,7 +137,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                       borderRadius: BorderRadius.circular(10)),
                                   child: Center(
                                     child: Text(
-                                      "LogIn",
+                                      "Login",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 20.0,
@@ -159,7 +159,7 @@ class _AdminLoginState extends State<AdminLogin> {
     );
   }
 
- LoginAdmin() {
+  LoginAdmin() {
     FirebaseFirestore.instance.collection("Admin").get().then((snapshot) {
       snapshot.docs.forEach((result) {
         if (result.data()['id'] != usernamecontroller.text.trim()) {
