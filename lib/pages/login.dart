@@ -65,7 +65,10 @@ class _LoginState extends State<Login> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [Color(0xFFff5c30), Color(0xFFe74b1a)],
+                  colors: [
+                    Color.fromRGBO(4, 4, 235, 0.498),
+                    Color.fromRGBO(4, 4, 235, 0.498)
+                  ],
                 ),
               ),
             ),
@@ -182,7 +185,8 @@ class _LoginState extends State<Login> {
                                   padding: EdgeInsets.symmetric(vertical: 12.0),
                                   width: 200,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffff5720),
+                                    // color: Color(0xffff5720),
+                                    color: Color.fromRGBO(4, 4, 235, 0.498),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(

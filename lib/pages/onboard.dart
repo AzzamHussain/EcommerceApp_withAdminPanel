@@ -77,7 +77,7 @@ class _OnboardState extends State<Onboard> {
               borderRadius: BorderRadius.circular(10.0),
               child: Container(
                 
-                decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(10.0)),
+                decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(10.0)),
                 height: 60,
               margin: EdgeInsets.all(40),
               width: double.infinity,

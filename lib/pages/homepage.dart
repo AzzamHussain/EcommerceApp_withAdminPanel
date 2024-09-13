@@ -107,31 +107,31 @@ class _HomepageState extends State<Homepage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    buildFoodCard('assets/salad2.png', 'Burger', '\$12', () {
+                    buildFoodCard('assets/salad2.png', 'Russian Salad', '250', () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => Details(
-                            itemName: 'Burger',
-                            price: '12',
+                            itemName: 'Russian',
+                            price: '250',
                             imagePath: 'assets/salad2.png',
                           ),
                         ),
                       );
                     }),
-                    buildFoodCard('assets/food.png', 'Pizza', '\$15', () {
+                    buildFoodCard('assets/food.png', 'Pizza', 'RS:1500', () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => Details(
-                            itemName: 'Pizza',
-                            price: '15',
+                            itemName: 'Platter',
+                            price: '1500',
                             imagePath: 'assets/food.png',
                           ),
                         ),
                       );
                     }),
-                    buildFoodCard('assets/beefbiryani.png', 'Biryani', '\$8',
+                    buildFoodCard('assets/beefbiryani.png', 'Biryani', 'RS:400',
                         () {
                       Navigator.push(
                         context,
@@ -153,31 +153,31 @@ class _HomepageState extends State<Homepage> {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  buildFoodTile('assets/salad2.png', 'Healthy Salad', '\$10', () {
+                  buildFoodTile('assets/salad2.png', 'Healthy Salad', 'Rs:200', () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Details(
                           itemName: 'Healthy Salad',
-                          price: '10',
+                          price: '200',
                           imagePath: 'assets/salad2.png',
                         ),
                       ),
                     );
                   }),
-                  buildFoodTile('assets/food.png', 'Burger with fries', '\$9', () {
+                  buildFoodTile('assets/food.png', 'Italian Salad', 'Rs:350', () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Details(
-                          itemName: 'Burger with fries',
+                          itemName: 'Italian Food',
                           price: '9',
                           imagePath: 'assets/food.png',
                         ),
                       ),
                     );
                   }),
-                  buildFoodTile('assets/pasta.png', 'Alfredo Pasta', '\$5', () {
+                  buildFoodTile('assets/pasta.png', 'Alfredo Pasta', 'RS:400', () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -190,13 +190,13 @@ class _HomepageState extends State<Homepage> {
                     );
                   }),
                   buildFoodTile(
-                      'assets/beefbiryani.png', 'Beef Biryani', '\$5', () {
+                      'assets/beefbiryani.png', 'Beef Biryani', 'Rs:500', () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Details(
                           itemName: 'Beef Biryani',
-                          price: '5',
+                          price: '500',
                           imagePath: 'assets/beefbiryani.png',
                         ),
                       ),

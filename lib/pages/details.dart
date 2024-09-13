@@ -1,3 +1,4 @@
+import 'package:ecommerce_with_adminpanel/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'cart_provider.dart'; // Import CartProvider
@@ -77,7 +78,7 @@ class _DetailsState extends State<Details> {
                     ),
                     Text(
                       "Delicious ${widget.itemName}",
-                      style: const TextStyle(fontSize: 18, color: Colors.grey),
+                      style: AppWidget.LightTextFieldStyle(),
                     ),
                   ],
                 ),
@@ -129,8 +130,9 @@ class _DetailsState extends State<Details> {
             const SizedBox(height: 20.0),
             Text(
               "A fresh mix of crisp vegetables and flavorful dressing.",
+              style: AppWidget.LightTextFieldStyle(),
             ),
-            const SizedBox(height: 30.0),
+            const SizedBox(height: 60.0),
             Padding(
               padding: const EdgeInsets.only(bottom: 40.0),
               child: Row(
@@ -138,17 +140,21 @@ class _DetailsState extends State<Details> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("Total price"),
-                      Text("\$${(int.parse(widget.price) * quantity)}")
+                      Text("Total price",
+                          style: AppWidget.boldTextFieldStyle()),
+                      Text(
+                        "Rs${(int.parse(widget.price) * quantity,)}",
+                        style: AppWidget.boldTextFieldStyle(),
+                      )
                     ],
                   ),
-                  const SizedBox(width: 40.0),
+                  const SizedBox(width: 20.0),
                   GestureDetector(
                     onTap: () {
                       _addToCart(); // Call function to add to cart
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width / 2.3,
+                      width: MediaQuery.of(context).size.width / 2,
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                           color: Colors.black,
@@ -159,9 +165,9 @@ class _DetailsState extends State<Details> {
                           const Text(
                             "Add to cart",
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0,
-                            ),
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontFamily: 'Poppins'),
                             overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(width: 15.0),

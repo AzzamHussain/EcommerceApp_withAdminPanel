@@ -86,8 +86,8 @@ class _SignUpState extends State<SignUp> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                  Color(0xFFff5c30),
-                  Color(0xFFe74b1a),
+                  Color.fromRGBO(4, 4, 235, 0.498),
+                  Color.fromRGBO(4, 4, 235, 0.498),
                 ])),
           ),
           // Form container with scroll view
@@ -187,7 +187,8 @@ class _SignUpState extends State<SignUp> {
                                   padding: EdgeInsets.symmetric(vertical: 12.0),
                                   width: 200,
                                   decoration: BoxDecoration(
-                                      color: Color(0Xffff5722),
+                                      //color: Color(0Xffff5722),
+                                      color: Color.fromRGBO(4, 4, 235, 0.498),
                                       borderRadius: BorderRadius.circular(20)),
                                   child: Center(
                                       child: Text(
