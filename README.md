@@ -1,4 +1,4 @@
-# Netflix Clone Using TMDB API
+# E-Commerce With Admin Panel
 
 ## Project Overview
 
@@ -32,7 +32,6 @@ experience.
 - **Programming Languages**: Dart
 - **Frameworks/Libraries**: Flutter
 - **Tools**: Visual Studio, Git
-- **APIs**: TMDb (The Movie Database) API
 - **Packages**: Multiple Flutter packages, including provider, cloud_firestore, firebase_auth, stripe_payment, and others
 
 ---
@@ -66,8 +65,7 @@ package for a responsive and organized codebase
 
 ## Functionality
 
-### User Roles and Permissions:
-- **Guest Users**: Can browse and search for titles but cannot access streaming.
+
 
 ### User Interface:
 - **Home Screen**: Displays food items and deals uploaded by restaurants.
@@ -81,7 +79,6 @@ package for a responsive and organized codebase
 ---
 
 ## APIs and Integrations:
-- **TMDb API**: Fetches data for movies and TV shows.
 - **Firebase Authentication**: Manages user login and signup.
 
 ---
